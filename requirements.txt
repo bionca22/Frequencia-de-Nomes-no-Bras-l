@@ -1,4 +1,2 @@
-methplotlib == 0.20.0
-numpy==1.21.0
-urllib3==1.26.6
-urllib
+requests == 2.31.0 
+matplotlib==3.7.2 

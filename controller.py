@@ -1,29 +1,19 @@
-import urllib3
-from urllib import parse, request
-
-# import matplotlib.pyplot as plt
-# import numpy as np
+import requests
 import json
+from matplotlib import pyplot as plt
 
-import pprint
 
-link = urllib3.PoolManager()
-ibge_api = "https/servicodados.ibge.gov.br/api/v3/agregados/1301/periodos/-6/variaveis/615|616?localidades=N2[all]"
+response= json.loads(requests.get("http://servicodados.ibge.gov.br/api/v2/censos/nomes/Gabriel").text)
 
-params = {"N2": "[all]"}
-querystring = parse.urlencode(params)
-url = "https://servicodados.ibge.gov.br/api/v3/agregados/1301/periodos/-6/variaveis/615|616?localidades=N2[all]" + "?" + querystring
-resp = request.urlopen(url)
-resp.isclosed()
-""" pprint.pprint(querystring) """
+periodlist = []
+frequencylist = []
 
-""" response = link.request("GET", ibge_api)
-content = response.data.decode('utf-8')
-data = json.loads(content) """
+for line in response[0]['res']:
+    frequency = int(line['frequencia'])
+    period =line['periodo'].replace("[", " ")
+    
+    periodlist.append(period)
+    frequencylist.append(frequency)
 
-# content_type = response.getheader("Content-Type")
-# print(content_type)
-
-""" print("Response status:", response.status)
-import pprint
-pprint.pprint(data) """
+plt.plot(periodlist, frequencylist)
+plt.show
