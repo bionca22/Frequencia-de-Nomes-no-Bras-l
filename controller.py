@@ -3,7 +3,7 @@ import json
 from matplotlib import pyplot as plt
 
 
-response= json.loads(requests.get("http://servicodados.ibge.gov.br/api/v2/censos/nomes/Gabriel").text)
+response= json.loads(requests.get("http://servicodados.ibge.gov.br/api/v2/censos/nomes/" + nome).text)
 
 periodlist = []
 frequencylist = []
@@ -16,4 +16,4 @@ for line in response[0]['res']:
     frequencylist.append(frequency)
 
 plt.plot(periodlist, frequencylist)
-plt.show
+plt.show()
