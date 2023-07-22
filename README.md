@@ -4,6 +4,6 @@
 
 🚀 Projeto em andamento
 <div>
-<a>Nome Pesquisado por Matheus</a>
+<a>Nome Pesquisado: Matheus</a>
 <img src="images/matheus_image.jpeg" alt="grafic">
 </div>
