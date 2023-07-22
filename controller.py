@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 
 name = input("escreva um nome: ")
 response = json.loads(
-    requests.get("http://servicodados.ibge.gov.br/api/v2/censos/nomes/" + nome).text
+    requests.get("http://servicodados.ibge.gov.br/api/v2/censos/nomes/" + name).text
 )
 
 periodlist = []
