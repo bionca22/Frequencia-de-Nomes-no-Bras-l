@@ -7,4 +7,3 @@
 <img src="images/matheus_image.jpeg" alt="grafic">
 </div>
 
-🚀 Projeto em andamento
